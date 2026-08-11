@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Veera</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left-group">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Veera</span>
+                    <span class="logo-dots">
+                        <span class="dot orange"></span>
+                        <span class="dot cyan"></span>
+                    </span>
+                </a>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="services.html" class="nav-link">Skills</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn-hire-me">Hire Me</a><button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button><button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header (Background only) -->
+    <section class="page-header" style="position: absolute; top: 0; left: 0; width: 100%; height: 50vh; z-index: -1;">
+        <div class="hero-bg-container gsap-fade-in" style="height: 100%;">
+            <img src="./assets/new_hero.jpg" alt="Banner" class="hero-bg-image" style="object-position: center; filter: brightness(0.4);">
+            <div class="hero-overlay-bottom" style="background: linear-gradient(to top, var(--bg-dark) 0%, transparent 100%);"></div>
+        </div>
+    </section>
+
+    <!-- Main Body Container -->
+    <main class="main-content" style="padding-top: 15vh;">
+        <div class="glow-orb orange-glow orb-1"></div>
+        <div class="glow-orb cyan-glow orb-2"></div>
+        
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="container">
+                <div class="gsap-scroll-trigger" style="text-align: center; margin-bottom: 4rem;">
+                    <span class="section-tag" style="display: inline-block; margin-bottom: 12px; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.75rem;"><i class="fa-solid fa-envelope-open-text" style="margin-right: 6px; color: var(--orange-primary);"></i> CONTACT ME</span>
+                    <h2 style="font-size: 4rem; font-family: var(--font-heading); color: var(--color-white); line-height: 1.15; margin-bottom: 0;">
+                        Let's <span class="text-sand" style="font-style: italic;">Build</span> Something.
+                    </h2>
+                </div>
+
+                <div class="gsap-stagger-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; align-items: stretch;">
+                    
+                    <!-- Left: Contact Details Card -->
+                    <div class="glass-card" style="padding: 3rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%); border-left: 4px solid var(--cyan-primary);">
+                        <div style="position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 101, 126, 0.08) 0%, transparent 60%); pointer-events: none;"></div>
+                        
+                        <p class="about-text-p" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; position: relative; z-index: 2;">
+                            Whether it's a web application, a UI/UX design project, or an API integration, I'm ready to bring your ideas to life. Drop a message and let's start the conversation.
+                        </p>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; position: relative; z-index: 2;">
+                            <!-- Email -->
+                            <div style="display: flex; align-items: center; gap: 1.2rem; background: rgba(0,0,0,0.3); padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(0,0,0,0.5)'; this.style.borderColor='var(--orange-primary)';" onmouseout="this.style.background='rgba(0,0,0,0.3)'; this.style.borderColor='rgba(255,255,255,0.05)';">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 42, 75, 0.15); display: flex; align-items: center; justify-content: center; color: var(--orange-primary); font-size: 1.4rem;">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: var(--color-gray); text-transform: uppercase; letter-spacing: 1px;">Email Me</div>
+                                    <a href="mailto:veeramani.4evr@gmail.com" style="color: var(--color-white); font-weight: 500; font-size: 1.1rem; text-decoration: none;">veeramani.4evr@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div style="display: flex; align-items: center; gap: 1.2rem; background: rgba(0,0,0,0.3); padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(0,0,0,0.5)'; this.style.borderColor='var(--cyan-primary)';" onmouseout="this.style.background='rgba(0,0,0,0.3)'; this.style.borderColor='rgba(255,255,255,0.05)';">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 101, 126, 0.15); display: flex; align-items: center; justify-content: center; color: var(--cyan-primary); font-size: 1.4rem;">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: var(--color-gray); text-transform: uppercase; letter-spacing: 1px;">Call Me</div>
+                                    <a href="tel:+917305332275" style="color: var(--color-white); font-weight: 500; font-size: 1.1rem; text-decoration: none;">+91 7305332275</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Location -->
+                            <div style="display: flex; align-items: center; gap: 1.2rem; background: rgba(0,0,0,0.3); padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(0,0,0,0.5)'; this.style.borderColor='var(--text-sand)';" onmouseout="this.style.background='rgba(0,0,0,0.3)'; this.style.borderColor='rgba(255,255,255,0.05)';">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; background: rgba(244, 228, 208, 0.15); display: flex; align-items: center; justify-content: center; color: var(--text-sand); font-size: 1.4rem;">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.8rem; color: var(--color-gray); text-transform: uppercase; letter-spacing: 1px;">Location</div>
+                                    <div style="color: var(--color-white); font-weight: 500; font-size: 1.1rem;">Palani, Tamilnadu</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: 2.5rem; position: relative; z-index: 2;">
+                            <a href="https://linkedin.com/in/Veeramanikanda.G" target="_blank" class="social-icon-btn" style="width: 45px; height: 45px;"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://instagram.com/veeramani_4ever" target="_blank" class="social-icon-btn" style="width: 45px; height: 45px;"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com" target="_blank" class="social-icon-btn" style="width: 45px; height: 45px;"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="glass-card" style="padding: 3rem; position: relative; overflow: hidden; border-top: 4px solid var(--orange-primary);">
+                        <div style="position: absolute; bottom: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 42, 75, 0.05) 0%, transparent 60%); pointer-events: none;"></div>
+                        <h3 style="font-family: var(--font-heading); font-size: 2rem; color: var(--color-white); margin-bottom: 2rem; position: relative; z-index: 2;">Send a Message</h3>
+                        
+                        <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem; position: relative; z-index: 2;">
+                            <div>
+                                <input type="text" id="user_name" placeholder="Your Name" required style="width: 100%; padding: 1.2rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--color-white); font-family: var(--font-body); font-size: 1rem; transition: all 0.3s ease; outline: none;" onfocus="this.style.borderColor='var(--orange-primary)'; this.style.background='rgba(0,0,0,0.6)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(0,0,0,0.4)';">
+                            </div>
+                            <div>
+                                <input type="email" id="user_email" placeholder="Your Email" required style="width: 100%; padding: 1.2rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--color-white); font-family: var(--font-body); font-size: 1rem; transition: all 0.3s ease; outline: none;" onfocus="this.style.borderColor='var(--orange-primary)'; this.style.background='rgba(0,0,0,0.6)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(0,0,0,0.4)';">
+                            </div>
+                            <div>
+                                <textarea id="message" rows="5" placeholder="Project Details or Message" required style="width: 100%; padding: 1.2rem; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: var(--color-white); font-family: var(--font-body); font-size: 1rem; transition: all 0.3s ease; outline: none; resize: vertical;" onfocus="this.style.borderColor='var(--orange-primary)'; this.style.background='rgba(0,0,0,0.6)';" onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.background='rgba(0,0,0,0.4)';"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.2rem; font-size: 1.1rem; border-radius: 8px; margin-top: 0.5rem; gap: 10px; border: none; cursor: pointer; display: flex; align-items: center;">
+                                <span>Send Inquiry</span>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Collaboration Process -->
+        <section class="section" id="process" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 4rem;">
+            <div class="container gsap-scroll-trigger">
+                <div class="section-header text-center">
+                    <h2 class="section-title"><span class="text-sand">How We</span> <span class="text-black">Work Together</span></h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="glass-card" style="padding: 2rem; text-align: center;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-orange); color: #000; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; font-size: 1.2rem;">1</div>
+                        <h4 style="color: var(--color-white); margin-bottom: 0.5rem;">Discovery Call</h4>
+                        <p style="color: var(--color-gray); font-size: 0.9rem;">We'll discuss your project goals, timeline, and requirements to ensure we're a perfect fit.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem; text-align: center;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-cyan); color: #000; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; font-size: 1.2rem;">2</div>
+                        <h4 style="color: var(--color-white); margin-bottom: 0.5rem;">Proposal & Plan</h4>
+                        <p style="color: var(--color-gray); font-size: 0.9rem;">I provide a detailed technical proposal outlining the architecture, deliverables, and cost.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem; text-align: center;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-sand); color: #000; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; font-size: 1.2rem;">3</div>
+                        <h4 style="color: var(--color-white); margin-bottom: 0.5rem;">Development</h4>
+                        <p style="color: var(--color-gray); font-size: 0.9rem;">I build your application with regular updates, ensuring it aligns with your vision perfectly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq" style="background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container gsap-scroll-trigger">
+                <div class="section-header text-center">
+                    <h2 class="section-title"><span class="text-sand">Frequently Asked</span> <span class="text-black">Questions</span></h2>
+                </div>
+                <div style="max-width: 800px; margin: 3rem auto 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h4 style="color: var(--color-white); margin-bottom: 0.5rem;"><i class="fa-solid fa-question-circle" style="color: var(--color-orange); margin-right: 10px;"></i>Are you available for freelance work?</h4>
+                        <p style="color: var(--color-gray); font-size: 0.95rem;">Yes! I am currently accepting freelance projects that align with my skills in full-stack web development.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h4 style="color: var(--color-white); margin-bottom: 0.5rem;"><i class="fa-solid fa-question-circle" style="color: var(--color-cyan); margin-right: 10px;"></i>Do you design as well as code?</h4>
+                        <p style="color: var(--color-gray); font-size: 0.95rem;">Absolutely. While development is my core strength, I have a strong eye for design and often wireframe interfaces in Figma before coding them.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h4 style="color: var(--color-white); margin-bottom: 0.5rem;"><i class="fa-solid fa-question-circle" style="color: var(--color-sand); margin-right: 10px;"></i>What is your typical turnaround time?</h4>
+                        <p style="color: var(--color-gray); font-size: 0.95rem;">This depends heavily on the scope of the project. A standard landing page might take 1-2 weeks, while a complex full-stack web app can take a month or more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="modern-footer">
+        <div class="footer-bg-animation"></div>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Veera</span>
+                    <span class="logo-dots">
+                        <span class="dot orange"></span>
+                        <span class="dot cyan"></span>
+                    </span>
+                </a>
+                <p class="footer-desc">
+                    Crafting digital experiences with precision and passion. Bridging the gap between complex problems and elegant solutions.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="services.html">Skills</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/Veeramanikanda.G" target="_blank" class="social-icon-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/veeramani_4ever" target="_blank" class="social-icon-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-icon-btn github"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="mailto:veeramani.4evr@gmail.com" class="footer-email">
+                    <i class="fa-solid fa-envelope"></i> veeramani.4evr@gmail.com
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-copyright-wrapper">
+                <p class="copyright-text">
+                    &copy; 2026 Veera Manikandan. All rights reserved. 
+                    <span class="copyright-desc">Designed with ?? focusing on interactive experiences.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

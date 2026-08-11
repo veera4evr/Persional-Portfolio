@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veera | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Veera - Full Stack Developer & Engineering Student.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left-group">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Veera</span>
+                    <span class="logo-dots">
+                        <span class="dot orange"></span>
+                        <span class="dot cyan"></span>
+                    </span>
+                </a>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="services.html" class="nav-link">Skills</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn-hire-me">Hire Me</a><button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button><button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-container gsap-fade-in">
+            <img src="./assets/new_hero.jpg" alt="Portfolio Hero Image" class="hero-bg-image" style="object-position: center; filter: brightness(0.7);">
+            <div class="hero-overlay-left"></div>
+            <div class="hero-overlay-bottom"></div>
+            <div class="hero-ambient-red"></div>
+            <div class="hero-ambient-crimson"></div>
+        </div>
+
+        <div class="hero-content container">
+            <div class="hero-badge gsap-slide-up">
+                <span class="badge-dot"></span>
+                Available for New Projects
+            </div>
+            <h1 class="hero-headline-big gsap-stagger-text">
+                <span class="text-sand">BUILDING DIGITAL</span><br>
+                <span class="text-white">SOLUTIONS.</span><br>
+                <span class="text-sand">SOLVING REAL-WORLD</span><br>
+                <span class="text-white">PROBLEMS.</span>
+            </h1>
+            <p class="hero-description-cinematic gsap-fade-in">
+                I transform ideas into scalable web applications that captivate audiences, streamline business processes, and leave a lasting impression — line by line.
+            </p>
+
+            <div class="hero-actions gsap-slide-up">
+                <a href="projects.html" class="btn btn-primary">
+                    <span>View Projects</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-secondary">
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <div class="hero-stats gsap-fade-in">
+                <div class="stat-item">
+                    <span class="stat-number">CSBS</span>
+                    <span class="stat-label">Student</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">Full</span>
+                    <span class="stat-label">Stack Dev</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Passion</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Body Container -->
+    <main class="main-content">
+        <!-- Background Glow Orbs matching photo theme -->
+        <div class="glow-orb orange-glow orb-1"></div>
+        <div class="glow-orb cyan-glow orb-2"></div>
+        
+        <!-- Short overview section for Home Page -->
+        <section class="section about-section" id="overview">
+            <div class="container gsap-scroll-trigger" style="padding: 70px 0 10px 0; position: relative; z-index: 2; display: flex; justify-content: center;">
+                <div class="about-text-col" style="text-align: center; max-width: 800px;">
+                    <h2 class="about-headline">
+                        <span class="text-sand">Welcome to</span><br>
+                        <span class="text-black">My Universe</span>
+                    </h2>
+                    <p class="about-text-p">
+                        I enjoy solving real-world problems through code and take pride in writing clean, scalable applications. 
+                        Explore my projects, learn about my skills, and get in touch if you want to collaborate on something amazing.
+                    </p>
+                    <a href="about.html" class="btn btn-primary" style="margin-top: 2rem;">
+                        <span>More About Me</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- What I Do Overview -->
+        <section class="section" id="what-i-do" style="padding-top: 2rem;">
+            <div class="container gsap-scroll-trigger">
+                <div class="section-header text-center">
+                    <h2 class="section-title"><span class="text-sand">What I</span> <span class="text-black">Do</span></h2>
+                </div>
+                <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="glass-card" style="padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <i class="fa-solid fa-code" style="font-size: 3rem; color: var(--color-orange);"></i>
+                        <h3 style="color: var(--color-white); font-size: 1.5rem;">Frontend</h3>
+                        <p style="color: var(--color-gray); font-size: 0.9rem;">Crafting responsive, interactive, and accessible user interfaces using HTML, CSS, JS, and React.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <i class="fa-solid fa-server" style="font-size: 3rem; color: var(--color-cyan);"></i>
+                        <h3 style="color: var(--color-white); font-size: 1.5rem;">Backend</h3>
+                        <p style="color: var(--color-gray); font-size: 0.9rem;">Building robust APIs and server-side logic using Node.js, Express, and databases like MongoDB.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <i class="fa-solid fa-pen-nib" style="font-size: 3rem; color: var(--color-sand);"></i>
+                        <h3 style="color: var(--color-white); font-size: 1.5rem;">UI/UX Design</h3>
+                        <p style="color: var(--color-gray); font-size: 0.9rem;">Designing intuitive user journeys and modern aesthetics that provide seamless user experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Work With Me -->
+        <section class="section" id="why-me" style="background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="grid-2-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="why-me-text gsap-scroll-trigger">
+                        <span class="services-tag-sm">MY PHILOSOPHY</span>
+                        <h2 class="about-headline" style="margin-top: 1rem;">
+                            <span class="text-sand">Driven by</span> <span class="text-black">Impact</span>
+                        </h2>
+                        <p class="about-text-p" style="margin-top: 1rem;">
+                            As a CSBS student, I approach development not just from a technical standpoint, but with a business systems mindset. I believe code should solve real problems, enhance efficiency, and drive measurable impact.
+                        </p>
+                        <p class="about-text-p">
+                            I am dedicated to writing clean, maintainable, and scalable code. I stay updated with the latest industry trends, ensuring that the solutions I build today are prepared for the challenges of tomorrow.
+                        </p>
+                    </div>
+                    <div class="why-me-stats gsap-scroll-trigger glass-card" style="padding: 3rem; display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1.5rem;">
+                            <i class="fa-solid fa-check-circle" style="font-size: 2rem; color: var(--color-orange);"></i>
+                            <div>
+                                <h4 style="color: var(--color-white); font-size: 1.2rem;">Clean Architecture</h4>
+                                <p style="color: var(--color-gray); font-size: 0.9rem;">Writing modular, reusable code.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1.5rem;">
+                            <i class="fa-solid fa-bolt" style="font-size: 2rem; color: var(--color-cyan);"></i>
+                            <div>
+                                <h4 style="color: var(--color-white); font-size: 1.2rem;">Performance First</h4>
+                                <p style="color: var(--color-gray); font-size: 0.9rem;">Optimizing for speed and efficiency.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1.5rem;">
+                            <i class="fa-solid fa-users" style="font-size: 2rem; color: var(--color-sand);"></i>
+                            <div>
+                                <h4 style="color: var(--color-white); font-size: 1.2rem;">User-Centric</h4>
+                                <p style="color: var(--color-gray); font-size: 0.9rem;">Focusing on intuitive user experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="modern-footer">
+        <div class="footer-bg-animation"></div>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Veera</span>
+                    <span class="logo-dots">
+                        <span class="dot orange"></span>
+                        <span class="dot cyan"></span>
+                    </span>
+                </a>
+                <p class="footer-desc">
+                    Crafting digital experiences with precision and passion. Bridging the gap between complex problems and elegant solutions.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="services.html">Skills</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/Veeramanikanda.G" target="_blank" class="social-icon-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/veeramani_4ever" target="_blank" class="social-icon-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-icon-btn github"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="mailto:veeramani.4evr@gmail.com" class="footer-email">
+                    <i class="fa-solid fa-envelope"></i> veeramani.4evr@gmail.com
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-copyright-wrapper">
+                <p class="copyright-text">
+                    &copy; 2026 Veera Manikandan. All rights reserved. 
+                    <span class="copyright-desc">Designed with ?? focusing on interactive experiences.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

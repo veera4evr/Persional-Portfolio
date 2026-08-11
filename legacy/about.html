@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Veera</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left-group">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Veera</span>
+                    <span class="logo-dots">
+                        <span class="dot orange"></span>
+                        <span class="dot cyan"></span>
+                    </span>
+                </a>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="services.html" class="nav-link">Skills</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <a href="contact.html" class="btn-hire-me">Hire Me</a><button class="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button><button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header (Smaller than Hero) -->
+    <section class="page-header">
+        <div class="hero-bg-container gsap-fade-in" style="height: 40vh; min-height: 300px;">
+            <img src="./assets/new_hero.jpg" alt="Banner" class="hero-bg-image" style="object-position: center; filter: brightness(0.7);">
+            <div class="hero-overlay-bottom"></div>
+        </div>
+        <div class="container page-header-content">
+            <h1 class="page-title gsap-slide-up"><span class="text-sand">About</span> <span class="text-black">Me</span></h1>
+        </div>
+    </section>
+
+    <!-- Main Body Container -->
+    <main class="main-content">
+        <div class="glow-orb orange-glow orb-1"></div>
+        <div class="glow-orb cyan-glow orb-2"></div>
+        
+        <!-- About Section -->
+        <section class="section about-section" id="about" style="padding-top: 80px; background-color: #0a0a0a; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container">
+                <div class="gsap-stagger-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: stretch;">
+                    
+                    <!-- Left: Profile Card -->
+                    <div class="glass-card" style="padding: 2.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: #f4e4d0; border: none; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.8)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.5)';">
+                        <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 50%); pointer-events: none;"></div>
+                        <img src="./assets/new_hero.jpg" alt="Veera" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center top; border: 4px solid #0d0d0d; margin-bottom: 1.5rem; box-shadow: 0 15px 35px rgba(0,0,0,0.3); position: relative; z-index: 2;">
+                        <h2 style="font-family: var(--font-heading); font-size: 2rem; color: #0d0d0d; line-height: 1.1; margin-bottom: 0.5rem; position: relative; z-index: 2;">Veeramanikandan.G</h2>
+                        <span style="color: #780a13; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 2rem; position: relative; z-index: 2;">(Veera)</span>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; text-align: left; position: relative; z-index: 2;">
+                            <div style="display: flex; align-items: center; gap: 1.2rem; background: rgba(0,0,0,0.05); padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); transition: background 0.3s ease;" onmouseover="this.style.background='rgba(0,0,0,0.1)';" onmouseout="this.style.background='rgba(0,0,0,0.05)';">
+                                <div style="width: 45px; height: 45px; border-radius: 50%; background: #0d0d0d; display: flex; align-items: center; justify-content: center; color: #f4e4d0; font-size: 1.2rem;">
+                                    <i class="fa-solid fa-cake-candles"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.75rem; color: rgba(0,0,0,0.6); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Born</div>
+                                    <div style="color: #0d0d0d; font-weight: 700; font-size: 1.05rem;">13 April 2007</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1.2rem; background: rgba(0,0,0,0.05); padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); transition: background 0.3s ease;" onmouseover="this.style.background='rgba(0,0,0,0.1)';" onmouseout="this.style.background='rgba(0,0,0,0.05)';">
+                                <div style="width: 45px; height: 45px; border-radius: 50%; background: #0d0d0d; display: flex; align-items: center; justify-content: center; color: #f4e4d0; font-size: 1.2rem;">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size: 0.75rem; color: rgba(0,0,0,0.6); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Location</div>
+                                    <div style="color: #0d0d0d; font-weight: 700; font-size: 1.05rem;">Palani, Tamilnadu</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Bio Content -->
+                    <div style="display: flex; flex-direction: column; gap: 2rem; justify-content: center;">
+                        <div>
+                            <span class="section-tag" style="display: inline-block; margin-bottom: 12px; padding: 6px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.75rem;"><i class="fa-solid fa-user-astronaut" style="margin-right: 6px; color: var(--cyan-primary);"></i> INTRODUCTION</span>
+                            <h2 style="font-size: 3rem; font-family: var(--font-heading); color: var(--color-white); line-height: 1.15; margin-bottom: 1.5rem;">
+                                Engineering the <span class="text-sand" style="font-style: italic;">Future</span>, One Line at a Time.
+                            </h2>
+                            <p class="about-text-p" style="font-size: 1.1rem; line-height: 1.8;">
+                                I’m a tech-enthusiastic student currently pursuing my Bachelor’s in <strong style="color: var(--color-white);">Computer Science and Business Systems (CSBS)</strong> at SSMIET, Dindigul. 
+                            </p>
+                        </div>
+                        
+                        <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--orange-primary); background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);">
+                            <p class="about-text-p" style="margin: 0; font-size: 1.05rem;">
+                                With a strong interest in full stack development, I’m passionate about building user-friendly, efficient digital solutions. I enjoy solving real-world problems through code and take pride in writing clean, scalable applications.
+                            </p>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                            <span style="padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; font-size: 0.85rem; color: var(--color-white); display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='var(--orange-primary)'; this.style.borderColor='var(--orange-primary)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)';">
+                                <i class="fa-solid fa-rocket" style="color: var(--color-white);"></i> Self-Motivated
+                            </span>
+                            <span style="padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; font-size: 0.85rem; color: var(--color-white); display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='var(--cyan-primary)'; this.style.borderColor='var(--cyan-primary)'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)';">
+                                <i class="fa-solid fa-laptop-code" style="color: var(--color-white);"></i> Continuous Learner
+                            </span>
+                            <span style="padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; font-size: 0.85rem; color: var(--color-white); display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;" onmouseover="this.style.background='#f4e4d0'; this.style.color='#000'; this.style.borderColor='#f4e4d0'; this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.03)'; this.style.color='var(--color-white)'; this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform='translateY(0)';">
+                                <i class="fa-solid fa-lightbulb"></i> Problem Solver
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications Timeline -->
+        <section class="section education-section" id="education">
+            <div class="container">
+                <div class="section-header text-center gsap-scroll-trigger">
+                    <h2 class="section-title"><span class="text-sand">Academic</span> <span class="text-black">Journey</span></h2>
+                    <p style="color: var(--text-dim); margin-top: 1rem;">A continuous path of learning, building, and growing.</p>
+                </div>
+
+                <div class="gsap-stagger-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; align-items: stretch; margin-top: 3rem;">
+                    
+                    <!-- Item 1 -->
+                    <div class="glass-card" style="padding: 2rem; position: relative; overflow: hidden; border-top: 3px solid var(--orange-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(244, 228, 208, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--orange-primary);">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-dim); background: rgba(0,0,0,0.3); padding: 4px 12px; border-radius: 20px;">2024 - 2028</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-white); margin-bottom: 0.5rem; line-height: 1.3;">B-Tech Computer Science & Business Systems</h3>
+                        <p style="color: var(--orange-primary); font-size: 0.95rem; font-weight: 500;">SSM Institute of Engineering and Technology</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="glass-card" style="padding: 2rem; position: relative; overflow: hidden; border-top: 3px solid var(--cyan-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(13, 13, 13, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--cyan-primary);">
+                                <i class="fa-solid fa-school"></i>
+                            </div>
+                            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-dim); background: rgba(0,0,0,0.3); padding: 4px 12px; border-radius: 20px;">2018 - 2024</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-white); margin-bottom: 0.5rem; line-height: 1.3;">Higher Secondary Education</h3>
+                        <p style="color: var(--cyan-primary); font-size: 0.95rem; font-weight: 500;">APM Hr Sec School, Palani</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="glass-card" style="padding: 2rem; position: relative; overflow: hidden; border-top: 3px solid var(--text-main);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div style="width: 50px; height: 50px; border-radius: 12px; background: rgba(244, 228, 208, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--text-main);">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-dim); background: rgba(0,0,0,0.3); padding: 4px 12px; border-radius: 20px;">Ongoing</span>
+                        </div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-white); margin-bottom: 1rem; line-height: 1.3;">Certifications & Bootcamps</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <li style="font-size: 0.9rem; color: var(--text-dim); display: flex; align-items: flex-start; gap: 8px;"><i class="fa-solid fa-check" style="color: var(--orange-primary); margin-top: 4px;"></i> Full Stack Web Dev Bootcamp</li>
+                            <li style="font-size: 0.9rem; color: var(--text-dim); display: flex; align-items: flex-start; gap: 8px;"><i class="fa-solid fa-check" style="color: var(--cyan-primary); margin-top: 4px;"></i> Responsive Web Design</li>
+                            <li style="font-size: 0.9rem; color: var(--text-dim); display: flex; align-items: flex-start; gap: 8px;"><i class="fa-solid fa-check" style="color: var(--text-main); margin-top: 4px;"></i> Git and GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Extracurriculars & Leadership -->
+        <section class="section" id="extracurriculars" style="padding-top: 2rem;">
+            <div class="container gsap-scroll-trigger">
+                <div class="section-header text-center">
+                    <h2 class="section-title"><span class="text-sand">Beyond</span> <span class="text-black">Academics</span></h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="glass-card" style="padding: 2rem;">
+                        <h3 style="color: var(--color-white); font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-users" style="color: var(--color-orange); margin-right: 10px;"></i>Tech Club Member</h3>
+                        <p style="color: var(--color-gray); font-size: 0.95rem; line-height: 1.6;">Active member of the college coding club, organizing weekly problem-solving sessions and collaborative mini-projects to foster a strong developer community within the campus.</p>
+                    </div>
+                    <div class="glass-card" style="padding: 2rem;">
+                        <h3 style="color: var(--color-white); font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-microphone" style="color: var(--color-cyan); margin-right: 10px;"></i>Hackathon Enthusiast</h3>
+                        <p style="color: var(--color-gray); font-size: 0.95rem; line-height: 1.6;">Participated in state-level hackathons focusing on building innovative tech solutions under pressure, improving teamwork, rapid prototyping, and presentation skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section class="section" id="hobbies" style="background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div class="container gsap-scroll-trigger text-center">
+                <h2 class="section-title" style="margin-bottom: 3rem;"><span class="text-sand">When I'm Not</span> <span class="text-black">Coding</span></h2>
+                <div style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-surface); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-solid fa-gamepad" style="font-size: 2rem; color: var(--color-orange);"></i>
+                        </div>
+                        <h4 style="color: var(--color-white);">Gaming</h4>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-surface); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-solid fa-camera" style="font-size: 2rem; color: var(--color-cyan);"></i>
+                        </div>
+                        <h4 style="color: var(--color-white);">Photography</h4>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-surface); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-solid fa-book-open" style="font-size: 2rem; color: var(--color-sand);"></i>
+                        </div>
+                        <h4 style="color: var(--color-white);">Tech Blogs</h4>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--color-surface); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.1);">
+                            <i class="fa-solid fa-headphones" style="font-size: 2rem; color: var(--color-white);"></i>
+                        </div>
+                        <h4 style="color: var(--color-white);">Music</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="modern-footer">
+        <div class="footer-bg-animation"></div>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Veera</span>
+                    <span class="logo-dots">
+                        <span class="dot orange"></span>
+                        <span class="dot cyan"></span>
+                    </span>
+                </a>
+                <p class="footer-desc">
+                    Crafting digital experiences with precision and passion. Bridging the gap between complex problems and elegant solutions.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="services.html">Skills</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://linkedin.com/in/Veeramanikanda.G" target="_blank" class="social-icon-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://instagram.com/veeramani_4ever" target="_blank" class="social-icon-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-icon-btn github"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="mailto:veeramani.4evr@gmail.com" class="footer-email">
+                    <i class="fa-solid fa-envelope"></i> veeramani.4evr@gmail.com
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-copyright-wrapper">
+                <p class="copyright-text">
+                    &copy; 2026 Veera Manikandan. All rights reserved. 
+                    <span class="copyright-desc">Designed with ?? focusing on interactive experiences.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
