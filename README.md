@@ -54,4 +54,4 @@ The optimized files will be output to the `dist` directory, ready to be deployed
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-*Designed & Developed by [Veeramanikanda G](https://veeramani.in)*
+*Designed & Developed by [Veeramanikandan G](https://veeramani.in)*
