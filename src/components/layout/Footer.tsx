@@ -337,7 +337,7 @@ const Footer: React.FC = () => {
           flexWrap: 'wrap', gap: '0.5rem',
         }}>
           <span style={{ color: SAND_DIM, fontSize: '0.82rem' }}>
-            © {new Date().getFullYear()} <span style={{ color: SAND, fontWeight: 600 }}>Veera Manikandan</span>. All rights reserved.
+            &copy; {new Date().getFullYear()} <span style={{ color: SAND, fontWeight: 600 }}>veeramani.in</span>. All rights reserved.
           </span>
           <span style={{ 
             color: SAND_DIM, 
