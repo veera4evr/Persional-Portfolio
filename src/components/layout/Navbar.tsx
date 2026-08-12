@@ -110,8 +110,13 @@ const Navbar: React.FC = () => {
               Resume <i className="fa-solid fa-download" style={{ marginLeft: '6px' }}></i>
             </a>
 
-            <button className="mobile-toggle block md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle Menu">
-              <i className={`fa-solid ${menuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+            <button 
+              className="mobile-toggle block md:hidden" 
+              onClick={() => setMenuOpen(true)} 
+              aria-label="Open Menu"
+              style={{ opacity: menuOpen ? 0 : 1, pointerEvents: menuOpen ? 'none' : 'auto', transition: 'opacity 0.3s ease' }}
+            >
+              <i className="fa-solid fa-bars"></i>
             </button>
           </div>
         </div>

@@ -2113,6 +2113,13 @@ a {
     background: #ff7038;
 }
 
+/* Hide mobile drawer elements on desktop */
+.mobile-drawer-header,
+.mobile-drawer-divider,
+.mobile-drawer-resume {
+    display: none;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 992px) {
     .hero-title {
