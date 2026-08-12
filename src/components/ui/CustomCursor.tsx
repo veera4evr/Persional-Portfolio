@@ -7,8 +7,8 @@ const CustomCursor: React.FC = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // Check if device uses touch pointer
-    if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768) {
+    // Check if device uses touch pointer or is a tablet/mobile screen size
+    if (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 1025) {
       setIsTouchDevice(true);
       return;
     }
