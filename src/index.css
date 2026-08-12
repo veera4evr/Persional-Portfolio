@@ -454,6 +454,13 @@ a {
     object-position: right top;
 }
 
+@media (max-width: 768px) {
+    .hero-bg-image {
+        object-position: center top;
+        /* Keep brightness same as desktop inline style — don't override it */
+    }
+}
+
 /* Background Giant Name Typography matching reference image */
 .hero-bg-name-wrapper {
     position: absolute;
@@ -500,6 +507,19 @@ a {
             rgba(0, 0, 0, 0.45) 0%,
             rgba(0, 0, 0, 0.2) 50%,
             transparent 100%);
+}
+
+/* On mobile the face is centered — left-side gradient would cut through it.
+   Switch to a bottom-only fade so the face is fully visible at top. */
+@media (max-width: 768px) {
+    .hero-overlay-left {
+        width: 100%;
+        background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 30%,
+            rgba(0, 0, 0, 0.15) 60%,
+            rgba(0, 0, 0, 0.35) 100%);
+    }
 }
 
 /* Seamless Bottom Transition where photo ends */
@@ -2120,23 +2140,106 @@ a {
 }
 
 @media (max-width: 768px) {
+    /* ── Slim left-side drawer ── */
     .nav-links {
         position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(9, 8, 12, 0.98);
-        backdrop-filter: blur(20px);
+        top: 0;
+        left: -280px;          /* starts fully off-screen */
+        width: 260px;
+        height: 100dvh;
+        background: rgba(10, 8, 14, 0.96);
+        backdrop-filter: blur(24px) saturate(1.6);
+        -webkit-backdrop-filter: blur(24px) saturate(1.6);
+        border-right: 1px solid rgba(244, 228, 208, 0.1);
+        box-shadow: 4px 0 40px rgba(0,0,0,0.6), 1px 0 0 rgba(120,10,19,0.3);
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        gap: 30px;
-        transition: var(--transition);
+        gap: 6px;
+        padding: 80px 28px 40px;
+        transition: left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        z-index: 9998;
+        overflow: hidden;
     }
 
+    /* Red ambient glow inside drawer */
+    .nav-links::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        left: -60px;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(120,10,19,0.45) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    /* Slide in */
     .nav-links.active {
         left: 0;
+    }
+
+    /* Each nav link — full-width, left aligned, styled like navbar */
+    .nav-links .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 13px 16px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgba(244, 228, 208, 0.7);
+        text-decoration: none;
+        letter-spacing: 0.2px;
+        transition: all 0.22s ease;
+        border: 1px solid transparent;
+        position: relative;
+    }
+
+    .nav-links .nav-link::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #780a13;
+        opacity: 0;
+        transition: opacity 0.22s ease;
+        flex-shrink: 0;
+    }
+
+    .nav-links .nav-link:hover,
+    .nav-links .nav-link.active {
+        color: #f4e4d0;
+        background: rgba(244, 228, 208, 0.06);
+        border-color: rgba(244, 228, 208, 0.1);
+        padding-left: 20px;
+    }
+
+    .nav-links .nav-link:hover::before,
+    .nav-links .nav-link.active::before {
+        opacity: 1;
+    }
+
+    .nav-links .nav-link.active {
+        color: #ffffff;
+        background: rgba(120, 10, 19, 0.2);
+        border-color: rgba(120, 10, 19, 0.4);
+        box-shadow: inset 0 0 20px rgba(120,10,19,0.1);
+    }
+
+    /* Dim backdrop overlay when drawer is open */
+    .nav-links.active::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 260px;
+        width: 100vw;
+        height: 100dvh;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: -1;
+        pointer-events: none;
     }
 
     .mobile-toggle {
@@ -2146,6 +2249,76 @@ a {
     .nav-cta {
         display: none;
     }
+
+    /* Drawer header: logo + close btn */
+    .mobile-drawer-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 4px;
+    }
+
+    .mobile-drawer-close {
+        background: rgba(244, 228, 208, 0.07);
+        border: 1px solid rgba(244, 228, 208, 0.12);
+        color: rgba(244, 228, 208, 0.7);
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-drawer-close:hover {
+        background: rgba(120, 10, 19, 0.3);
+        border-color: rgba(120, 10, 19, 0.5);
+        color: #f4e4d0;
+    }
+
+    .mobile-drawer-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(244,228,208,0.15), transparent);
+        margin: 8px 0;
+        flex-shrink: 0;
+    }
+
+    /* Resume button inside drawer */
+    .mobile-drawer-resume {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 12px 16px;
+        margin-top: 4px;
+        border-radius: 10px;
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: #f4e4d0;
+        text-decoration: none;
+        background: rgba(120, 10, 19, 0.25);
+        border: 1px solid rgba(120, 10, 19, 0.45);
+        transition: all 0.22s ease;
+        letter-spacing: 0.3px;
+    }
+
+    .mobile-drawer-resume:hover {
+        background: rgba(120, 10, 19, 0.45);
+        border-color: rgba(120, 10, 19, 0.7);
+        color: #fff;
+    }
+
+    /* Fix padding so drawer starts at top */
+    .nav-links {
+        padding: 28px 24px 40px !important;
+        justify-content: flex-start !important;
+    }
+
 
     .hero-title {
         font-size: clamp(2.5rem, 8vw, 3rem);
@@ -2857,99 +3030,118 @@ html.lenis, html.lenis body {
 }
 
 
+/* ─── Mobile Navbar ─────────────────────────────────────────── */
 @media (max-width: 768px) {
   .logo-text { display: none !important; }
   .btn-hire-me { display: none !important; }
 }
 
-
+/* ─── Mobile Hero Section ───────────────────────────────────── */
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh;
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+
   .hero-content {
     margin-left: 0 !important;
     text-align: center !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .hero-actions {
-    justify-content: center !important;
-  }
-  .hero-stats {
-    align-items: center !important;
-    text-align: center !important;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .hero-content {
-    margin-left: 0 !important;
-    text-align: center !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-    padding-top: 20px;
+    padding: 0 24px 32px;
+    width: 100%;
+    max-width: 100%;
   }
 
+  /* Badge */
+  .hero-badge {
+    margin-bottom: 16px;
+    font-size: 0.78rem;
+  }
+
+  /* Headline — tight, fits on 2 lines max */
   .hero-headline-big {
-    font-size: 3rem !important;
-    line-height: 1.1;
+    font-size: clamp(1.8rem, 10vw, 2.4rem) !important;
+    line-height: 1.08;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
   }
 
+  /* Description */
   .hero-description-cinematic {
-    font-size: 0.95rem !important;
-    line-height: 1.5;
-    margin-bottom: 24px;
-    padding: 0 10px;
+    font-size: 0.88rem !important;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    padding: 0;
+    opacity: 0.85;
   }
 
+  /* Buttons — stacked, full-width */
   .hero-actions {
     flex-direction: column !important;
     width: 100%;
-    gap: 12px !important;
+    gap: 10px !important;
+    margin-bottom: 20px;
   }
 
-  .hero-actions .btn {
+  .hero-actions .btn,
+  .hero-actions > * {
     width: 100% !important;
     justify-content: center !important;
-    padding: 14px 20px !important;
-  }
-  
-  .hero-actions > * {
-    width: 100%;
+    padding: 13px 20px !important;
+    font-size: 0.9rem !important;
   }
 
+  /* Stats bar — pill shape, inline */
   .hero-stats {
     flex-direction: row !important;
     justify-content: center !important;
     align-items: center !important;
-    width: 100% !important;
-    padding: 12px 16px !important;
-    gap: 12px !important;
+    width: auto !important;
+    max-width: 100%;
+    padding: 10px 20px !important;
+    gap: 16px !important;
     border-radius: 9999px !important;
-    background: rgba(18, 16, 24, 0.4) !important;
-    margin-top: 20px !important;
+    background: rgba(10, 8, 16, 0.55) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    margin-top: 0 !important;
   }
 
   .stat-item {
     flex-direction: row !important;
-    align-items: center !important;
-    gap: 6px !important;
+    align-items: baseline !important;
+    gap: 5px !important;
   }
 
   .stat-number {
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
   }
 
   .stat-label {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
     margin-top: 0 !important;
   }
 
   .stat-divider {
     width: 1px !important;
-    height: 16px !important;
+    height: 14px !important;
+    opacity: 0.4;
   }
 }
 
+/* ─── Extra small phones (< 400px) ─────────────────────────── */
+@media (max-width: 400px) {
+  .hero-headline-big {
+    font-size: clamp(1.6rem, 9vw, 2rem) !important;
+  }
+
+  .hero-description-cinematic {
+    font-size: 0.82rem !important;
+  }
+}
