@@ -9,15 +9,15 @@ const NotFound: React.FC = () => {
     const ctx = gsap.context(() => {
       // Glitch effect on the 404 text
       gsap.to('.glitch-text', {
-        x: () => Math.random() * 10 - 5,
-        y: () => Math.random() * 10 - 5,
-        opacity: () => Math.random() * 0.5 + 0.5,
+        x: 'random(-5, 5)',
+        y: 'random(-5, 5)',
+        opacity: 'random(0.5, 1)',
         duration: 0.1,
         repeat: -1,
         yoyo: true,
         ease: 'none',
         delay: 2,
-        repeatDelay: 1.5,
+        repeatDelay: 1, // Fixed typescript error
       });
 
       // Entry animations
