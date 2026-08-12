@@ -2236,18 +2236,7 @@ a {
         box-shadow: inset 0 0 20px rgba(120,10,19,0.1);
     }
 
-    /* Dim backdrop overlay when drawer is open */
-    .nav-links.active::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 260px;
-        width: 100vw;
-        height: 100dvh;
-        background: rgba(0, 0, 0, 0.55);
-        z-index: -1;
-        pointer-events: none;
-    }
+    /* The React backdrop now handles the dimming and click-to-close */
 
     .mobile-toggle {
         display: block;

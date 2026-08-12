@@ -47,6 +47,18 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
+        {/* Backdrop — click to close. Inside header so it renders behind the drawer. */}
+        {menuOpen && (
+          <div
+            onClick={() => setMenuOpen(false)}
+            style={{
+              position: 'fixed', inset: 0,
+              background: 'rgba(0,0,0,0.55)',
+              zIndex: 9997,
+              backdropFilter: 'blur(2px)',
+            }}
+          />
+        )}
         <div className="nav-container">
           <div className="nav-left-group">
             <Link to="/" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', whiteSpace: 'nowrap' }}>
@@ -122,18 +134,6 @@ const Navbar: React.FC = () => {
         </div>
       </header>
 
-      {/* Backdrop — click to close */}
-      {menuOpen && (
-        <div
-          onClick={() => setMenuOpen(false)}
-          style={{
-            position: 'fixed', inset: 0,
-            background: 'rgba(0,0,0,0.55)',
-            zIndex: 9997,
-            backdropFilter: 'blur(2px)',
-          }}
-        />
-      )}
     </>
   );
 };
