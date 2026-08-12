@@ -67,7 +67,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="hero-section" id="hero">
         <div className="hero-bg-container gsap-fade-in">
-          <img src="/assets/new_hero.jpg" alt="Portfolio Hero Image" className="hero-bg-image" style={{ filter: 'brightness(0.7)' }} />
+          <img src="/assets/new_home_bg.jpg" alt="Portfolio Hero Image" className="hero-bg-image" style={{ filter: 'brightness(0.7)' }} />
           <div className="hero-overlay-left"></div>
           <div className="hero-overlay-bottom"></div>
           <div className="hero-ambient-red"></div>
