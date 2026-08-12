@@ -283,6 +283,7 @@ const Footer: React.FC = () => {
             <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}>
               <SocialBtn href="https://www.linkedin.com/in/veera-%E2%9C%A6%EF%B8%8E-a6b488327" icon="fa-brands fa-linkedin-in" hoverColor="#0A66C2" />
               <SocialBtn href="https://instagram.com/veeramani_4ever" icon="fa-brands fa-instagram" hoverColor="#E1306C" />
+              <SocialBtn href="https://x.com/veera_4ever" icon="fa-brands fa-x-twitter" hoverColor="#000000" />
               <SocialBtn href="https://github.com" icon="fa-brands fa-github" hoverColor="#6e5494" />
               <SocialBtn href={`https://wa.me/${rawPhone}`} icon="fa-brands fa-whatsapp" hoverColor="#25D366" />
             </div>

@@ -153,6 +153,7 @@ const Contact: React.FC = () => {
   const socials = [
     { icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/in/veera-%E2%9C%A6%EF%B8%8E-a6b488327', label: 'LinkedIn' },
     { icon: 'fa-brands fa-instagram', href: 'https://instagram.com/veeramani_4ever', label: 'Instagram' },
+    { icon: 'fa-brands fa-x-twitter', href: 'https://x.com/veera_4ever', label: 'X (Twitter)' },
     { icon: 'fa-brands fa-github', href: 'https://github.com', label: 'GitHub' },
   ];
 
@@ -366,7 +367,7 @@ const Contact: React.FC = () => {
                   <i className="fa-solid fa-bolt"></i> Quick Answers
                 </span>
                 <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', color: 'var(--text-main)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem' }}>
-                  Got <span style={{ color: '#780a13', fontStyle: 'italic' }}>Questions?</span>
+                  Got <span style={{ color: '#f4e4d0', fontStyle: 'italic' }}>Questions?</span>
                 </h2>
                 <p style={{ color: 'var(--text-dim)', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '400px' }}>
                   Here are some of the most common questions I get asked. Can't find what you're looking for? Feel free to reach out via the contact form above.
