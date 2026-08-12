@@ -2796,8 +2796,57 @@ html.lenis, html.lenis body {
 }
 @media (max-width: 992px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  /* Brand col spans full width on tablet */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  /* Brand col spans full width on mobile */
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Tighten footer top padding */
+  footer[style] {
+    padding-top: 2.5rem !important;
+    margin-top: 2.5rem !important;
+  }
+
+  /* Shrink brand logo row */
+  .footer-grid > div:first-child img {
+    height: 40px !important;
+  }
+  .footer-grid > div:first-child span {
+    font-size: 1.3rem !important;
+  }
+
+  /* Shrink brand description text */
+  .footer-grid > div:first-child p {
+    font-size: 0.8rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Social icon row — smaller buttons */
+  .footer-grid > div:first-child a[style*="42px"] {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Bottom bar: stack vertically on very small screens */
+  footer div[style*="justifyContent: 'space-between'"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1rem 0 !important;
+    gap: 0.3rem !important;
   }
 }
 
