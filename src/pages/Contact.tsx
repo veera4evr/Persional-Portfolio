@@ -4,8 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PremiumFAQItem: React.FC<{ q: string, a: string }> = ({ q, a }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const PremiumFAQItem: React.FC<{ q: string, a: string, index: number, activeIndex: number | null, setActiveIndex: (idx: number | null) => void }> = ({ q, a, index, activeIndex, setActiveIndex }) => {
+  const isOpen = activeIndex === index;
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -13,46 +13,55 @@ const PremiumFAQItem: React.FC<{ q: string, a: string }> = ({ q, a }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        borderRadius: '16px', 
-        background: isHovered || isOpen ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.015)',
-        border: `1px solid ${isHovered || isOpen ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.03)'}`,
+        borderRadius: '20px', 
+        background: isOpen ? 'linear-gradient(145deg, rgba(120, 10, 19, 0.15) 0%, rgba(20, 5, 8, 0.4) 100%)' : (isHovered ? 'rgba(255,255,255,0.03)' : 'transparent'),
+        border: `1px solid ${isOpen ? 'rgba(244, 228, 208, 0.15)' : (isHovered ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.02)')}`,
+        backdropFilter: isOpen ? 'blur(12px)' : 'none',
         overflow: 'hidden', 
-        transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-        transform: isHovered && !isOpen ? 'scale(1.01)' : 'scale(1)',
-        boxShadow: isHovered || isOpen ? '0 10px 30px rgba(0,0,0,0.2)' : 'none',
+        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+        transform: isHovered && !isOpen ? 'translateX(8px)' : 'translateX(0)',
+        boxShadow: isOpen ? '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05)' : 'none',
+        marginBottom: '12px'
       }}
     >
       <div 
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => setActiveIndex(isOpen ? null : index)}
         style={{
-          padding: '1.25rem 1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '16px',
-          color: isHovered || isOpen ? '#ffffff' : 'var(--text-main)', fontWeight: 600, fontSize: '1.05rem', listStyle: 'none',
+          padding: '1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          color: isOpen ? '#f4e4d0' : (isHovered ? '#ffffff' : 'var(--text-main)'), fontWeight: 600, fontSize: '1.1rem', listStyle: 'none',
           transition: 'color 0.3s ease'
         }}
       >
+        <span style={{ paddingRight: '20px' }}>{q}</span>
         <span style={{ 
-          width: '32px', height: '32px', borderRadius: '50%', 
-          background: isOpen ? 'var(--orange-primary)' : 'rgba(244,228,208,0.05)', 
+          width: '36px', height: '36px', borderRadius: '50%', 
+          background: isOpen ? 'rgba(244, 228, 208, 0.1)' : 'rgba(255,255,255,0.03)', 
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, 
-          color: isOpen ? '#0d0d0d' : 'var(--orange-primary)', fontSize: '0.85rem',
-          transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-          transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-          border: '1px solid rgba(255,255,255,0.1)'
+          color: isOpen ? '#f4e4d0' : 'rgba(255,255,255,0.4)', fontSize: '0.9rem',
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          border: '1px solid rgba(255,255,255,0.05)'
         }}>
-          <i className="fa-solid fa-plus"></i>
+          <i className="fa-solid fa-chevron-down"></i>
         </span>
-        {q}
       </div>
       <div 
         style={{
           display: 'grid',
           gridTemplateRows: isOpen ? '1fr' : '0fr',
           opacity: isOpen ? 1 : 0,
-          transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+          transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
         <div style={{ overflow: 'hidden' }}>
-          <div style={{ padding: '0 1.5rem 1.25rem 4.5rem', color: 'rgba(244,228,208,0.7)', fontSize: '0.95rem', lineHeight: 1.7 }}>
+          <div style={{ 
+            padding: '0 1.5rem 1.5rem 1.5rem', 
+            color: 'rgba(244,228,208,0.6)', 
+            fontSize: '0.95rem', lineHeight: 1.8,
+            borderTop: isOpen ? '1px solid rgba(255,255,255,0.03)' : 'none',
+            marginTop: isOpen ? '8px' : '0',
+            paddingTop: isOpen ? '1.5rem' : '0'
+          }}>
             {a}
           </div>
         </div>
@@ -65,6 +74,7 @@ const Contact: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [activeFAQIndex, setActiveFAQIndex] = useState<number | null>(0); // First item open by default
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -342,28 +352,40 @@ const Contact: React.FC = () => {
           </div>
         </section>
 
-        <section className="section" id="faq" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative' }}>
-          {/* Ambient Glow */}
-          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '60vw', height: '300px', background: 'radial-gradient(ellipse at center, rgba(144,0,0,0.15) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0, pointerEvents: 'none' }}></div>
-          <div className="container" style={{ maxWidth: '750px', position: 'relative', zIndex: 1 }}>
-            <div className="gsap-scroll-trigger text-center" style={{ marginBottom: '3rem' }}>
-              <span className="section-tag" style={{ display: 'inline-block', marginBottom: '12px', padding: '6px 14px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', fontSize: '0.75rem' }}>
-                <i className="fa-solid fa-circle-question" style={{ marginRight: '6px', color: 'var(--orange-primary)' }}></i> FAQ
-              </span>
-              <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.2rem', color: 'var(--text-main)' }}>
-                Common <span className="text-sand" style={{ fontStyle: 'italic' }}>Questions</span>
-              </h2>
-            </div>
+        <section className="section" id="faq" style={{ position: 'relative', overflow: 'hidden', paddingTop: '6rem', paddingBottom: '6rem' }}>
+          {/* Ambient Background Glow for FAQ */}
+          <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(120,10,19,0.08) 0%, transparent 60%)', filter: 'blur(60px)', pointerEvents: 'none' }}></div>
+          <div style={{ position: 'absolute', bottom: '0', right: '-10%', width: '40vw', height: '40vw', background: 'radial-gradient(circle, rgba(244,228,208,0.03) 0%, transparent 60%)', filter: 'blur(60px)', pointerEvents: 'none' }}></div>
+          
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'start' }}>
+              
+              {/* Left Column: Heading */}
+              <div className="gsap-scroll-trigger" style={{ position: 'sticky', top: '120px' }}>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', background: 'rgba(120, 10, 19, 0.15)', border: '1px solid rgba(120, 10, 19, 0.3)', borderRadius: '20px', fontSize: '0.75rem', color: '#f4e4d0', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '24px' }}>
+                  <i className="fa-solid fa-bolt"></i> Quick Answers
+                </span>
+                <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', color: 'var(--text-main)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem' }}>
+                  Got <span style={{ color: '#780a13', fontStyle: 'italic' }}>Questions?</span>
+                </h2>
+                <p style={{ color: 'var(--text-dim)', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '400px' }}>
+                  Here are some of the most common questions I get asked. Can't find what you're looking for? Feel free to reach out via the contact form above.
+                </p>
+                <div style={{ marginTop: '3rem', width: '60px', height: '2px', background: 'linear-gradient(90deg, #780a13, transparent)' }}></div>
+              </div>
 
-            <div className="gsap-stagger-container" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', position: 'relative', zIndex: 2 }}>
-              {[
-                { q: 'Are you available for freelance work?', a: 'Yes! I am currently accepting freelance projects that align with my skills in full-stack web development.' },
-                { q: 'Do you design as well as code?', a: 'Absolutely. While development is my core strength, I have a strong eye for design and often wireframe interfaces in Figma before coding them.' },
-                { q: 'What is your typical turnaround time?', a: 'This depends on scope. A standard landing page takes 1-2 weeks, while a complex full-stack web app can take a month or more.' },
-                { q: 'What technologies do you work with?', a: 'My core stack includes React, TypeScript, Node.js, Express, MongoDB, and MySQL. I also work with Python, Figma, Git, and Docker.' },
-              ].map((faq, i) => (
-                <PremiumFAQItem key={i} q={faq.q} a={faq.a} />
-              ))}
+              {/* Right Column: Accordion */}
+              <div className="gsap-stagger-container" style={{ position: 'relative', zIndex: 2 }}>
+                {[
+                  { q: 'Are you available for freelance work?', a: 'Yes! I am currently accepting freelance projects that align with my skills in full-stack web development. Contact me to check my current availability.' },
+                  { q: 'Do you design as well as code?', a: 'Absolutely. While development is my core strength, I have a strong eye for design and often wireframe interfaces in Figma before coding them to ensure a premium look and feel.' },
+                  { q: 'What is your typical turnaround time?', a: 'This depends entirely on the scope of the project. A standard landing page typically takes 1-2 weeks, while a complex full-stack web application can take a month or more.' },
+                  { q: 'What technologies do you work with?', a: 'My core stack includes React, TypeScript, Node.js, Express, MongoDB, and MySQL. I also frequently work with Python, Figma, Git, and Docker for various deployment strategies.' },
+                  { q: 'How do you handle revisions?', a: 'I believe in collaborative development. We will have regular check-ins and milestone reviews where you can provide feedback to ensure the final product perfectly aligns with your vision.' }
+                ].map((faq, i) => (
+                  <PremiumFAQItem key={i} index={i} q={faq.q} a={faq.a} activeIndex={activeFAQIndex} setActiveIndex={setActiveFAQIndex} />
+                ))}
+              </div>
             </div>
           </div>
         </section>
